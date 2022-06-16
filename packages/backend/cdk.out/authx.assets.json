@@ -1,0 +1,19 @@
+{
+  "version": "20.0.0",
+  "files": {
+    "7506374a9f6837ebf4218b11fbb0768d3e26e8d3394c3a793c9ac3cd9216e287": {
+      "source": {
+        "path": "authx.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-current_region": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "7506374a9f6837ebf4218b11fbb0768d3e26e8d3394c3a793c9ac3cd9216e287.json",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

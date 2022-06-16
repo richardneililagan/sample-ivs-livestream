@@ -1,0 +1,102 @@
+{
+  "version": "20.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "authx.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "authx.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "authx": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "authx.template.json",
+        "tags": {
+          "x-application": "IVS Livestream and Chat Demo"
+        },
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/7506374a9f6837ebf4218b11fbb0768d3e26e8d3394c3a793c9ac3cd9216e287.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "authx.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "authx.assets"
+      ],
+      "metadata": {
+        "/authx": [
+          {
+            "type": "aws:cdk:stack-tags",
+            "data": [
+              {
+                "Key": "x-application",
+                "Value": "IVS Livestream and Chat Demo"
+              }
+            ]
+          }
+        ],
+        "/authx/ivs-demo-userpool/smsRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ivsdemouserpoolsmsRole49E38ECE"
+          }
+        ],
+        "/authx/ivs-demo-userpool/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ivsdemouserpool6BE0B838"
+          }
+        ],
+        "/authx/ivs-demo-userpool/userpool-domain/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ivsdemouserpooluserpooldomain075BB0E5"
+          }
+        ],
+        "/authx/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/authx/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/authx/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/authx/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "authx"
+    }
+  }
+}

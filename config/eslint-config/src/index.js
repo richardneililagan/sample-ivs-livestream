@@ -1,7 +1,7 @@
-const header = `/*!
+const header = `!
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: MIT-0
- */`
+ `
 
 const config = {
   parser: '@typescript-eslint/parser',
