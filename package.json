@@ -1,0 +1,11 @@
+{
+  "name": "ivs-livestream-and-chat",
+  "private": true,
+  "workspaces": [
+    "config/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
