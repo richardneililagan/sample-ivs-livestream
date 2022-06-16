@@ -1,0 +1,17 @@
+{
+  "name": "@ivs-demo/eslint-config",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "author": "Richard Neil Ilagan <ilagan@amazon.com>",
+  "license": "MIT-0",
+  "private": true,
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.28.0",
+    "@typescript-eslint/parser": "^5.28.0",
+    "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-header": "^3.1.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-unicorn": "^42.0.0"
+  }
+}

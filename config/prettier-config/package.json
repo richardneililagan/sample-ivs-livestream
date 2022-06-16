@@ -1,0 +1,11 @@
+{
+  "name": "@ivs-demo/prettier-config",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "author": "Richard Neil Ilagan <ilagan@amazon.com>",
+  "license": "MIT-0",
+  "private": true,
+  "dependencies": {
+    "prettier": "^2.7.0"
+  }
+}
