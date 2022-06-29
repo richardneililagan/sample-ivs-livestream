@@ -2,11 +2,13 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: MIT-0
  */
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
 import TopNavigation from '@/components/top-navigation'
 import SiteFooter from '@/components/site-footer'
+
 import HomeView from '@/views/home'
+import StaticDemoView from '@/views/static-demo'
 
 // :: ---
 
@@ -16,23 +18,26 @@ export type AppRootProps = {
 
 const AppRoot = (props?: AppRootProps) => {
 	return (
-		<div role='main' className='h-full flex flex-col'>
-			<header>
-				<TopNavigation />
-			</header>
+		<BrowserRouter>
+			<div role='main' className='h-full flex flex-col'>
+				<header>
+					<TopNavigation />
+				</header>
 
-			<section className='flex-grow'>
-				<BrowserRouter>
+				<section className='flex-grow'>
 					<Routes>
 						<Route path='/' element={<HomeView />} />
-					</Routes>
-				</BrowserRouter>
-			</section>
+						<Route path='/a/static' element={<StaticDemoView />} />
 
-			<footer>
-				<SiteFooter />
-			</footer>
-		</div>
+						<Route path='*' element={<Navigate to='/' />} />
+					</Routes>
+				</section>
+
+				<footer>
+					<SiteFooter />
+				</footer>
+			</div>
+		</BrowserRouter>
 	)
 }
 

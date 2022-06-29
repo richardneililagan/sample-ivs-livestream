@@ -4,6 +4,7 @@
  */
 
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import * as icons from 'react-feather'
 import clsx from 'clsx'
 
@@ -35,7 +36,7 @@ const TopNavigation = (props?: TopNavigationProps) => {
 			</a>
 
 			<h2 className='p-2 text-2xl w-full md:w-fit text-center md:text-left uppercase font-black'>
-				Livestreem
+				<Link to='/'>Livestreem</Link>
 			</h2>
 
 			<ul className={menuClass}>
@@ -45,13 +46,13 @@ const TopNavigation = (props?: TopNavigationProps) => {
 					</a>
 				</li>
 				<li className='p-4'>
-					<a href='/'>Static Demo</a>
+					<Link to='a/static'>Static Demo</Link>
 				</li>
 				<li className='p-4'>
-					<a href='/'>Live Demo</a>
+					<Link to='a/live'>Live Demo</Link>
 				</li>
 				<li className='p-4'>
-					<a href='/'>Comparison</a>
+					<Link to='a/compare'>Comparison</Link>
 				</li>
 			</ul>
 		</nav>

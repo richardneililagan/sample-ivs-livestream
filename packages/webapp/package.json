@@ -1,37 +1,41 @@
 {
-  "name": "@ivs-demo/webapp",
-  "private": true,
-  "version": "1.0.0",
-  "author": "Richard Neil Ilagan <ilagan@amazon.com>",
-  "license": "MIT-0",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "lint": "eslint . -f stylish"
-  },
-  "dependencies": {
-    "clsx": "^1.1.1",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-feather": "^2.0.10",
-    "react-router-dom": "6"
-  },
-  "devDependencies": {
-    "@ivs-demo/eslint-config": "^1.0.0",
-    "@ivs-demo/prettier-config": "^1.0.0",
-    "@tailwindcss/forms": "^0.5.2",
-    "@tsconfig/node16": "^1.0.3",
-    "@tsconfig/vite-react": "^1.0.0",
-    "@types/react": "^18.0.0",
-    "@types/react-dom": "^18.0.0",
-    "@vitejs/plugin-react": "^1.3.0",
-    "autoprefixer": "^10.4.7",
-    "postcss": "^8.4.14",
-    "postcss-import": "^14.1.0",
-    "tailwindcss": "^3.1.3",
-    "typescript": "^4.6.3",
-    "vite": "^2.9.9",
-    "vite-tsconfig-paths": "^3.5.0"
-  }
+	"name": "@ivs-demo/webapp",
+	"private": true,
+	"version": "1.0.0",
+	"author": "Richard Neil Ilagan <ilagan@amazon.com>",
+	"license": "MIT-0",
+	"scripts": {
+		"dev": "VITE_BUILD_VERSION_HASH=dev vite",
+		"build": "tsc && VITE_BUILD_VERSION_HASH=$(git rev-parse --short HEAD) vite build",
+		"preview": "vite preview",
+		"lint": "eslint . -f stylish"
+	},
+	"dependencies": {
+		"amazon-ivs-player": "^1.11.0",
+		"clsx": "^1.1.1",
+		"events": "^3.3.0",
+		"hls.js": "^1.1.5",
+		"react": "^18.0.0",
+		"react-dom": "^18.0.0",
+		"react-feather": "^2.0.10",
+		"react-router-dom": "6"
+	},
+	"devDependencies": {
+		"@ivs-demo/eslint-config": "^1.0.0",
+		"@ivs-demo/prettier-config": "^1.0.0",
+		"@tailwindcss/forms": "^0.5.2",
+		"@tsconfig/node16": "^1.0.3",
+		"@tsconfig/vite-react": "^1.0.0",
+		"@types/react": "^18.0.0",
+		"@types/react-dom": "^18.0.0",
+		"@vitejs/plugin-react": "^1.3.0",
+		"autoprefixer": "^10.4.7",
+		"cssnano": "^5.1.12",
+		"postcss": "^8.4.14",
+		"postcss-import": "^14.1.0",
+		"tailwindcss": "^3.1.3",
+		"typescript": "^4.6.3",
+		"vite": "^2.9.9",
+		"vite-tsconfig-paths": "^3.5.0"
+	}
 }
