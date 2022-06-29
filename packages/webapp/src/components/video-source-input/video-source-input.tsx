@@ -3,24 +3,50 @@
  * SPDX-License-Identifier: MIT-0
  */
 
-import React from 'react'
+import React, { useState } from 'react'
+import * as icons from 'react-feather'
+
+import QrCodeReaderModal from '@/components/qr-code-reader'
+
+// :: ---
 
 export type VideoSourceInputProps = {
 	value: string
-	handleChange: React.ChangeEventHandler<HTMLInputElement>
+	handleChange: (value: string) => void
 }
 
 const VideoSourceInput = (props: VideoSourceInputProps) => {
+	const [isQrCodeReaderVisible, setIsQrCodeReaderVisible] = useState(false)
+
 	return (
-		<label className='w-full lg:w-2/3 flex flex-col gap-2 items-center'>
-			<input
-				type='text'
-				className='w-full bg-slate-800 bg-opacity-40 border-slate-700'
-				value={props.value}
-				onChange={props.handleChange}
+		<>
+			<QrCodeReaderModal
+				visible={isQrCodeReaderVisible}
+				onClose={() => setIsQrCodeReaderVisible(false)}
+				onResult={(result) => {
+					console.log(result)
+					props.handleChange(result)
+				}}
 			/>
-			<span className='text-sm'>Video source URL</span>
-		</label>
+
+			<label className='px-2 w-full lg:w-2/3 flex flex-col gap-2 items-center'>
+				<div className='w-full flex flex-row gap-4'>
+					<input
+						type='text'
+						className='w-full bg-slate-800 bg-opacity-40 border-slate-700'
+						value={props.value}
+						onChange={(event) => props.handleChange(event.target.value)}
+					/>
+					<button
+						className='px-4 border border-slate-700 bg-slate-800 rounded-full'
+						onClick={() => setIsQrCodeReaderVisible(true)}
+					>
+						<icons.Camera />
+					</button>
+				</div>
+				<span className='text-sm flex-grow'>Video source URL</span>
+			</label>
+		</>
 	)
 }
 

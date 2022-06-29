@@ -41,6 +41,7 @@ export const StandardPlayer = (props: StandardPlayerProps) => {
 				ref={videoElement}
 				className='w-full'
 				muted={true}
+				autoPlay={true}
 				controls={props.showControls}
 			/>
 		</div>

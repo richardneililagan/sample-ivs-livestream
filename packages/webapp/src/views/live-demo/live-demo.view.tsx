@@ -30,7 +30,7 @@ const LiveDemoView = (props: LiveDemoViewProps) => {
 
 			<VideoSourceInput
 				value={sourceUrl}
-				handleChange={(event) => setSourceUrl(event.target.value)}
+				handleChange={(value) => setSourceUrl(value)}
 			/>
 		</div>
 	)

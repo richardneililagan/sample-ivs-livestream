@@ -4,8 +4,8 @@
  */
 
 import { useState } from 'react'
-import useDebounce from '@/hooks/use-debounce'
 
+import useDebounce from '@/hooks/use-debounce'
 import * as player from '@/components/video-player'
 import VideoSourceInput from '@/components/video-source-input'
 
@@ -35,7 +35,7 @@ const ComparisonDemoView = (props: ComparisonDemoViewProps) => {
 
 			<VideoSourceInput
 				value={sourceUrl}
-				handleChange={(event) => setSourceUrl(event.target.value)}
+				handleChange={(value) => setSourceUrl(value)}
 			/>
 		</div>
 	)

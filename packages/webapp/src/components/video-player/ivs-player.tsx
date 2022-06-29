@@ -57,6 +57,7 @@ export const IvsPlayer = (props: IvsPlayerProps) => {
 				ref={videoElement}
 				className='w-full'
 				muted={true}
+				autoPlay={true}
 				controls={props.showControls}
 			/>
 		</div>
