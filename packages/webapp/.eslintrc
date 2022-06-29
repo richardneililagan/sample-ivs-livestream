@@ -3,4 +3,4 @@ extends:
   - '@ivs-demo/eslint-config'
 
 env:
-  node: true
+  browser: true
