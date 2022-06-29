@@ -11,8 +11,11 @@
     "lint": "eslint . -f stylish"
   },
   "dependencies": {
+    "clsx": "^1.1.1",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "react-feather": "^2.0.10",
+    "react-router-dom": "6"
   },
   "devDependencies": {
     "@ivs-demo/eslint-config": "^1.0.0",

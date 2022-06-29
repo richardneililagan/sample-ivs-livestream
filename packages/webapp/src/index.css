@@ -5,7 +5,13 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    @apply antialiased box-border;
-  }
+	html {
+		@apply antialiased box-border;
+	}
+
+	a[href] {
+		&:hover {
+			@apply text-yellow-500;
+		}
+	}
 }
