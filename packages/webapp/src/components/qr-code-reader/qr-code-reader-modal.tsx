@@ -9,13 +9,12 @@ import { QrReader } from 'react-qr-reader'
 // :: ---
 
 export type QrCodeReaderModalProps = {
-	visible?: boolean
 	onResult: (text: string) => void
 	onClose: () => void
 }
 
 const QrCodeReaderModal = (props: QrCodeReaderModalProps) => {
-	return props.visible ? (
+	return (
 		<div className='p-2 fixed inset-0 bg-slate-900 bg-opacity-95 z-50 flex flex-col gap-8 justify-center items-center'>
 			<div className='aspect-square w-full md:w-1/3 border border-slate-800 bg-slate-900'>
 				<QrReader
@@ -36,7 +35,7 @@ const QrCodeReaderModal = (props: QrCodeReaderModalProps) => {
 				<icons.X />
 			</button>
 		</div>
-	) : null
+	)
 }
 
 export default QrCodeReaderModal

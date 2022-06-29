@@ -20,14 +20,15 @@ const VideoSourceInput = (props: VideoSourceInputProps) => {
 
 	return (
 		<>
-			<QrCodeReaderModal
-				visible={isQrCodeReaderVisible}
-				onClose={() => setIsQrCodeReaderVisible(false)}
-				onResult={(result) => {
-					console.log(result)
-					props.handleChange(result)
-				}}
-			/>
+			{isQrCodeReaderVisible && (
+				<QrCodeReaderModal
+					onClose={() => setIsQrCodeReaderVisible(false)}
+					onResult={(result) => {
+						console.log(result)
+						props.handleChange(result)
+					}}
+				/>
+			)}
 
 			<label className='px-2 w-full lg:w-2/3 flex flex-col gap-2 items-center'>
 				<div className='w-full flex flex-row gap-4'>
