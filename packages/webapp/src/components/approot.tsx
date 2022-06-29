@@ -9,6 +9,7 @@ import SiteFooter from '@/components/site-footer'
 
 import HomeView from '@/views/home'
 import StaticDemoView from '@/views/static-demo'
+import LiveDemoView from '@/views/live-demo'
 
 // :: ---
 
@@ -16,7 +17,7 @@ export type AppRootProps = {
 	//
 }
 
-const AppRoot = (props?: AppRootProps) => {
+const AppRoot = () => {
 	return (
 		<BrowserRouter>
 			<div role='main' className='h-full flex flex-col'>
@@ -28,6 +29,7 @@ const AppRoot = (props?: AppRootProps) => {
 					<Routes>
 						<Route path='/' element={<HomeView />} />
 						<Route path='/a/static' element={<StaticDemoView />} />
+						<Route path='/a/live' element={<LiveDemoView />} />
 
 						<Route path='*' element={<Navigate to='/' />} />
 					</Routes>

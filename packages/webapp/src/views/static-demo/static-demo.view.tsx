@@ -5,6 +5,8 @@
 
 import * as player from '@/components/video-player'
 
+// :: ---
+
 export type StaticDemoViewProps = {
 	//
 }
