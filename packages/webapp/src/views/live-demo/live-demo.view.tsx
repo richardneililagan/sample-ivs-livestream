@@ -6,6 +6,7 @@ import { useState } from 'react'
 
 import useDebounce from '@/hooks/use-debounce'
 import * as player from '@/components/video-player'
+import VideoSourceInput from '@/components/video-source-input'
 
 // :: ---
 
@@ -27,15 +28,10 @@ const LiveDemoView = (props: LiveDemoViewProps) => {
 				<player.IvsPlayer src={debouncedSourceUrl} />
 			</div>
 
-			<label className='w-full lg:w-2/3 flex flex-col gap-2 items-center'>
-				<input
-					type='text'
-					className='w-full bg-slate-800 bg-opacity-40 border-slate-700'
-					value={sourceUrl}
-					onChange={(event) => setSourceUrl(event.target.value)}
-				/>
-				<span className='text-sm'>Video source URL</span>
-			</label>
+			<VideoSourceInput
+				value={sourceUrl}
+				handleChange={(event) => setSourceUrl(event.target.value)}
+			/>
 		</div>
 	)
 }
