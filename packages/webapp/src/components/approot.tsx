@@ -10,6 +10,7 @@ import SiteFooter from '@/components/site-footer'
 import HomeView from '@/views/home'
 import StaticDemoView from '@/views/static-demo'
 import LiveDemoView from '@/views/live-demo'
+import ComparisonDemoView from '@/views/comparison-demo/comparison-demo.view'
 
 // :: ---
 
@@ -30,6 +31,7 @@ const AppRoot = () => {
 						<Route path='/' element={<HomeView />} />
 						<Route path='/a/static' element={<StaticDemoView />} />
 						<Route path='/a/live' element={<LiveDemoView />} />
+						<Route path='/a/compare' element={<ComparisonDemoView />} />
 
 						<Route path='*' element={<Navigate to='/' />} />
 					</Routes>

@@ -15,6 +15,7 @@ import wasm from 'amazon-ivs-player/dist/assets/amazon-ivs-wasmworker.min.wasm?u
 
 export type IvsPlayerProps = {
 	src?: string
+	showControls?: boolean
 }
 
 export const IvsPlayer = (props: IvsPlayerProps) => {
@@ -56,7 +57,7 @@ export const IvsPlayer = (props: IvsPlayerProps) => {
 				ref={videoElement}
 				className='w-full'
 				muted={true}
-				controls={true}
+				controls={props.showControls}
 			/>
 		</div>
 	)
