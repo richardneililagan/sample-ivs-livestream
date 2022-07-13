@@ -25,10 +25,12 @@ const ComparisonDemoView = (props: ComparisonDemoViewProps) => {
 	return (
 		<div className='flex flex-col gap-4 items-center justify-center h-full'>
 			<div className='p-4 flex flex-row gap-2 w-full'>
-				<div className='flex-grow w-1/2'>
+				<div className='flex flex-col items-center gap-4 flex-grow w-1/2'>
+					<h3>Standard</h3>
 					<player.StandardPlayer src={debouncedSourceUrl} />
 				</div>
-				<div className='flex-grow w-1/2'>
+				<div className='flex flex-col items-center gap-4 flex-grow w-1/2'>
+					<h3>Chunked</h3>
 					<player.IvsPlayer src={debouncedSourceUrl} />
 				</div>
 			</div>
